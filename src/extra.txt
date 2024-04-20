@@ -1,0 +1,28 @@
+# from collections import Counter
+
+# def build_vocab(tokenized_texts, min_freq=1):
+#     token_counts = Counter(token for text in tokenized_texts for token in text)
+#     vocab = {"<pad>": 0, "<unk>": 1}
+#     token_id = 2
+#     for token, freq in token_counts.items():
+#         if freq >= min_freq:
+#             vocab[token] = token_id
+#             token_id += 1
+#     return vocab
+
+# def tokens_to_indices(tokenized_text, vocab):
+#     return [vocab.get(token, vocab["<unk>"]) for token in tokenized_text]
+
+# def batch_to_indices(batch_texts, vocab):
+#     return [tokens_to_indices(text, vocab) for text in batch_texts]
+
+# def pad_sequences(sequences, maxlen=None, padding_value=0):
+#     if not maxlen:
+#         maxlen = max(len(seq) for seq in sequences)
+#     return [seq + [padding_value] * (maxlen - len(seq)) for seq in sequences]
+
+# # Usage
+# tokenized_texts = [[hello, world], [hello, machine, learning]]
+# vocab = build_vocab(tokenized_texts)
+# all_texts = [[hello, world], [machine, learning, hello], [new, tokens, here]]
+# all_indexed_texts = batch_to_indices
